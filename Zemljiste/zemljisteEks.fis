@@ -1,0 +1,60 @@
+[System]
+Name='zemljisteEks'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=12
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Ocjena'
+Range=[0 1000]
+NumMFs=4
+MF1='Losa':'trimf',[0 125.5 250]
+MF2='Srednja':'trimf',[200 350 500]
+MF3='Prosjecna':'trimf',[450 610 750]
+MF4='Dobra':'trimf',[700 853.1 1000]
+
+[Input2]
+Name='Kupovina'
+Range=[0 1000]
+NumMFs=3
+MF1='NeKupiti':'trimf',[0 200 400]
+MF2='MozdaKupiti':'trimf',[350 550 750]
+MF3='Kupiti':'trimf',[700 850 1000]
+
+[Output1]
+Name='OcjenaF'
+Range=[0 1000]
+NumMFs=4
+MF1='Losa':'trimf',[0 125.5 250]
+MF2='Srednja':'trimf',[200 350 500]
+MF3='Prosjecna':'trimf',[450 610 750]
+MF4='Dobra':'trimf',[700 853.1 1000]
+
+[Output2]
+Name='KupovinaF'
+Range=[0 1000]
+NumMFs=3
+MF1='NeKupiti':'trimf',[0 200 400]
+MF2='MozdaKupiti':'trimf',[350 550 750]
+MF3='Kupiti':'trimf',[700 850 1000]
+
+[Rules]
+1 1, 1 1 (1) : 1
+1 2, 1 2 (1) : 1
+1 3, 1 3 (1) : 1
+2 1, 2 1 (1) : 1
+2 2, 2 2 (1) : 1
+2 3, 2 3 (1) : 1
+3 1, 3 1 (1) : 1
+3 2, 3 2 (1) : 1
+3 3, 3 3 (1) : 1
+4 1, 4 1 (1) : 1
+4 2, 4 2 (1) : 1
+4 3, 4 3 (1) : 1
